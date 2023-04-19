@@ -18,12 +18,11 @@ public class Main {
                 if ((sum - temp) == 100) {
                     arr[i] = 0;
                     arr[j] = 0;
+                    
                     Arrays.sort(arr);
 
-                    for (int n : arr) {
-                        if (n != 0) {
-                            System.out.println(n);
-                        }
+                    for (int k = 2; k < arr.length; k++) {
+                        System.out.println(arr[k]);
                     }
                     return;
                 } 
