@@ -5,23 +5,26 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
 
-        String[] question = input.split("-"); // '-'를 기준으로 문자열 분리
+        String[] strArr = input.split("-");
 
-        int result = 0;
-        for (int i = 0; i < question.length; i++) {
-            String[] addition = question[i].split("\\+");
+        for (int i = 0; i < strArr.length; i++) {
+            int temp = 0;
+            if (strArr[i].contains("+")) {
+                String[] intArr = strArr[i].split("\\+");
 
-            int additionNum = 0;
-            for (int j = 0; j < addition.length; j++) {
-                additionNum += Integer.parseInt(addition[j]);
-            }
-
-            if (i == 0) { // 첫번째 정수는 양수
-                result = additionNum;
-            } else {
-                result -= additionNum;
+                for (int j = 0; j < intArr.length; j++) {
+                    temp += Integer.parseInt(intArr[j]);
+                }
+                strArr[i] = String.valueOf(temp);
             }
         }
-        System.out.println(result);
+
+        int answer = Integer.parseInt(strArr[0]);
+        for (int i = 1; i < strArr.length; i++) {
+            answer -= Integer.parseInt(strArr[i]);
+        }
+
+        System.out.println(answer);
+
     }
 }
