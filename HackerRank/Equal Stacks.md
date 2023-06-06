@@ -21,52 +21,61 @@ h3: 7 - 1 - 1 = 5
 # 코드
 ```
 public static int equalStacks(List<Integer> h1, List<Integer> h2, List<Integer> h3) {
-    Stack<Integer> stackA = new Stack<>();
-    Stack<Integer> stackB = new Stack<>();
-    Stack<Integer> stackC = new Stack<>();
-    int sumA = 0;
-    int sumB = 0;
-    int sumC = 0;
-    
-    for (int i = h1.size()-1; i >= 0; i--) {
-        stackA.push(h1.get(i));
-        sumA += h1.get(i);
+        Stack<Integer> stackA = new Stack<>();
+        Stack<Integer> stackB = new Stack<>();
+        Stack<Integer> stackC = new Stack<>();
+        int sumA = 0;
+        int sumB = 0;
+        int sumC = 0;
+
+        for (int i = h1.size()-1; i >= 0; i--) {
+            stackA.push(h1.get(i));
+            sumA += h1.get(i);
+        }
+        
+        for (int i = h2.size()-1; i >= 0; i--) {
+            stackB.push(h2.get(i));
+            sumB += h2.get(i);
+        }
+        
+        for (int i = h3.size()-1; i >= 0; i--) {
+            stackC.push(h3.get(i));
+            sumC += h3.get(i);
+        }
+        
+        int min = sumA < sumB ? sumA : sumB;
+        min = min < sumC ? min : sumC;
+        
+        while (true) {
+            if (sumA == min && sumB == min && sumC == min) {
+                return min;
+            }
+            
+            if (sumA > min) {
+                sumA -= stackA.pop();
+                min = checkMin(sumA, min);
+            }
+            
+            if (sumB > min) {
+                sumB -= stackB.pop();
+                min = checkMin(sumB, min);
+            }
+            
+            if (sumC > min) {
+                sumC -= stackC.pop();
+                min = checkMin(sumC, min);
+            }
+        }
     }
     
-    for (int i = h2.size()-1; i >= 0; i--) {
-        stackB.push(h2.get(i));
-        sumB += h2.get(i);
-    }
-    
-    for (int i = h3.size()-1; i >= 0; i--) {
-        stackC.push(h3.get(i));
-        sumC += h3.get(i);
-    }
-    
-    int min = sumA < sumB ? sumA : sumB;
-    min = min < sumC ? min : sumC;
-    
-    while (true) {
-        if (sumA == min && sumB == min && sumC == min) {
+    // 스택의 총합과 min 비교 함수
+    public static int checkMin (int sum, int min) {
+        if (sum > min) {
             return min;
-        }
-        
-        if (sumA > min) {
-            sumA -= stackA.pop();
-            min = (sumA < min) ? sumA : min;
-        }
-        
-        if (sumB > min) {
-            sumB -= stackB.pop();
-            min = (sumB < min) ? sumB : min;
-        }
-        
-        if (sumC > min) {
-            sumC -= stackC.pop();
-            min = (sumC < min) ? sumC : min;
+        } else {
+            return sum;
         }
     }
-}
 ```
 
 <br>
