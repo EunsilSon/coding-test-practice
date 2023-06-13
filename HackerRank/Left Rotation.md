@@ -14,8 +14,7 @@ d = 2, arr = [1,2,3,4,5] 일 때,
 # 코드
 ```
 public static List<Integer> rotateLeft(int d, List<Integer> arr) {
-        Integer[] array = new Integer[arr.size()];
-        array = arr.toArray(new Integer[arr.size()]);
+        Integer[] array = arr.toArray(new Integer[arr.size()]);
         
         for (int i = 0; i < d; i++) {
             int temp = array[0];
