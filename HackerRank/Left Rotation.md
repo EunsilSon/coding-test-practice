@@ -12,28 +12,27 @@ d = 2, arr = [1,2,3,4,5] 일 때,
 <br>
 
 # 코드
-```
+```java
 public static List<Integer> rotateLeft(int d, List<Integer> arr) {
-        Integer[] array = arr.toArray(new Integer[arr.size()]);
+        LinkedList<Integer> list = new LinkedList(arr); 
         
         for (int i = 0; i < d; i++) {
-            int temp = array[0];
-            
-            for (int j = 1; j < arr.size(); j++) {
-                array[j-1] = array[j];    
-            }
-            array[array.length-1] = temp;
+            list.add(list.poll());
         }
         
-        return Arrays.asList(array);
+        return list;
     }
 ```
 
 <br>
 
 # 해설
-1. List 를 배열로 변환한다. (List로 진행하면 시간 초과 발생)
-2. 1회전 후 맨 뒤로 갈 0번 인덱스의 요소를 `temp`에 담아둔다.
-3. 내부 for문에서 2번째 요소부터 앞으로 옮긴다.
-4. 반복이 끝난 후 배열의 마지막 값으로 `temp`를 넣는다.
-5. 2번~4번 단계를 `d`만큼 반복한다.
+1. `LinkedList`에 `arr`을 넣는다. (첫번째 값과 마지막 값을 사용하기 위함)
+2. `list`의 첫번째 값을 삭제하면서 반환되는 값을 `list`의 마지막에 다시 넣는다.
+3. (2)번을 `d`만큼 반복한다.
+
+<br>
+
+# 시행착오
+`O(n^2)`으로 해결했던 코드를 `O(n)`으로 줄이는 과정을 블로그에 기록했다.  
+[HackerRank : Left Rotation (feat. 시간복잡도)](https://velog.io/@eunsilson/HackerRank-Left-Rotation-feat.-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84)
