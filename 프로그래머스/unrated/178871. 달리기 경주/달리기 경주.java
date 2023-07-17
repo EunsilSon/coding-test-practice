@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Solution {
-    public Object[] solution(String[] players, String[] callings) {
+    public String[] solution(String[] players, String[] callings) {
         HashMap<String, Integer> map = new HashMap<>();
         for (int i = 0; i < players.length; i++) {
             map.put(players[i], i);
@@ -9,14 +9,14 @@ class Solution {
 
 
         for (int i = 0; i < callings.length; i++) {
-            int winnerRank = map.get(callings[i]);
-            String loser = players[winnerRank-1];
+            int runner = map.get(callings[i]);
+            String front = players[runner-1];
 
-            map.put(players[winnerRank-1], winnerRank);
-            map.put(players[winnerRank], winnerRank-1);
+            map.put(front, runner);
+            map.put(players[runner], runner-1);
 
-            players[winnerRank-1] = callings[i];
-            players[winnerRank] = loser;
+            players[runner-1] = callings[i];
+            players[runner] = front;
         }
 
         return players;
