@@ -56,7 +56,7 @@ public class Main {
 switch 문을 사용해 nx, ny 변수를 반복 횟수만큼 재할당 하므로 추후 수정이 어려운 코드
 
 ### 답안 코드
-
+(1 ≤ N ≤ 1,000,000)
 ```java
 public class Main {
 
