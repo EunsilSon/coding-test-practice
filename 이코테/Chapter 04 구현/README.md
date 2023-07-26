@@ -1,13 +1,15 @@
 # Chapter 04 구현
 - 머릿속에 있는 알고리즘을 소스코드로 바꾸는 과정
 
+<br>
+
 ## 연습 문제: 상하좌우
 MxM 행렬에서 시작 좌표 (1,1)에서 시작해 상, 하, 좌, 우 이동하여 계획서대로 움직인다.  
 최종적으로 도착할 지점의 좌표를 출력한다.
 
 ### 내 코드
 
-```jsx
+```java
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -98,6 +100,8 @@ public class Main {
 ```
 
 이동 방향과 좌표를 배열에 담아 필요한 값만 꺼내 사용해 추후 수정이 용이함
+
+<br>
 
 ## 연습 문제: 시각
 00시 00분 00초부터 N시 59분 59초까지의 모든 시각 중에서 3이 하나라도 포함되는 모든 경우의 수를 구한다.
