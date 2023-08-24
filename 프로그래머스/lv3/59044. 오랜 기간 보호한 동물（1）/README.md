@@ -2,6 +2,41 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59044) 
 
+<br>
+
+# 풀이
+- 통과하지 못했던 코드
+```SQL
+SELECT ins.NAME, ins.DATETIME
+FROM ANIMAL_INS ins LEFT JOIN ANIMAL_OUTS outs
+ON ins.ANIMAL_ID = outs.ANIMAL_ID
+WHERE outs.ANIMAL_ID IS NULL
+ORDER BY ins.DATETIME ASC;
+```
+
+→ 문제에서 '입양을 가지 못한 동물이 3마리 이상인 경우만 입력으로 주어집니다' 를 놓쳐 반환할 행의 개수를 제한하지 않았다.
+
+<br>
+
+- 수정후
+```SQL
+SELECT ins.NAME, ins.DATETIME
+FROM ANIMAL_INS ins LEFT JOIN ANIMAL_OUTS outs
+ON ins.ANIMAL_ID = outs.ANIMAL_ID
+WHERE outs.ANIMAL_ID IS NULL
+ORDER BY ins.DATETIME ASC
+LIMIT 3; // LIMIT 절 추가
+```
+
+> **LIMIT [시작 위치] [반환 개수]**  
+> 지정한 개수만큼의 행 반환
+
+<br>
+
+---
+
+<br>
+
 ### 성능 요약
 
 메모리: 0.0 MB, 시간: 0.00 ms
