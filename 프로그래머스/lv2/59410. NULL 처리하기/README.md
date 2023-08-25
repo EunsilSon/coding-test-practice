@@ -2,6 +2,16 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59410) 
 
+
+
+# 문제 풀이
+```SQL
+SELECT IFNULL(컬럼명, "null일 때 대체 값") FROM 테이블 명;
+```
+해당 컬럼의 값이 NULL일 때, 다른 값으로 출력하고, NULL이 아닐 때는 기존의 컬럼 값으로 출력한다.
+
+---
+
 ### 성능 요약
 
 메모리: 0.0 MB, 시간: 0.00 ms
