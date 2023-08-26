@@ -2,6 +2,14 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59038) 
 
+# 문제 풀이
+```SQL
+MIN(컬럼)
+```
+해당 컬럼에서 가장 작은 값을 출력한다.
+
+---
+
 ### 성능 요약
 
 메모리: 0.0 MB, 시간: 0.00 ms
