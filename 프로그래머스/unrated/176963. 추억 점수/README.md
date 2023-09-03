@@ -2,6 +2,13 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/176963?language=java) 
 
+---
+### 해설
+인물과 추억 점수를 key-value 형태의 HashMap에 저장 후, 맵에 존재하는 key의 값을 가져와 추억 점수를 합한다.
+
+---
+
+
 ### 성능 요약
 
 메모리: 74 MB, 시간: 0.02 ms
