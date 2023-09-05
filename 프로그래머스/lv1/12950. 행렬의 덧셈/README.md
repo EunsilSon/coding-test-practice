@@ -2,6 +2,13 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12950) 
 
+---
+### 해설
+`arr1`과 `arr2`의 동일한 위치에 있는 원소의 합계를 `arr1`에 덮어씌운다.  
+내부 for문이 열의 길이만큼만 반복하도록 주의한다.
+
+---
+
 ### 성능 요약
 
 메모리: 125 MB, 시간: 3.24 ms
