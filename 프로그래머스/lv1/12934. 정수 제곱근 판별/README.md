@@ -2,6 +2,14 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12934) 
 
+---
+### 해설
+Math 함수를 사용하여 주어진 n의 제곱근을 구하고, 제곱근이 양의 정수인 지 판별한다.
+- `Math.sqrt(x)` 제곱근 반환
+- `Math.pow(x, y)` x를 y만큼 제곱한 값 반환
+
+---
+
 ### 성능 요약
 
 메모리: 70.9 MB, 시간: 0.04 ms
