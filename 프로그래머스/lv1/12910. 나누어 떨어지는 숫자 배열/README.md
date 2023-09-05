@@ -2,6 +2,14 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12910) 
 
+---
+### 해설
+1. `divisor`과 나누어 떨어지는 값은 ArrayList에 담는다.
+2. 리스트가 비어있는 경우 배열 `result` -1을 넣고 반환한다.
+3. 리스트가 비어있지 않은 경우, 배열로 값을 옮기고 정렬 후 반환한다.
+
+---
+
 ### 성능 요약
 
 메모리: 73.2 MB, 시간: 0.65 ms
