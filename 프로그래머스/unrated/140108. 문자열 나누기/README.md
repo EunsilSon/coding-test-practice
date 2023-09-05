@@ -2,6 +2,14 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/140108?language=java#) 
 
+---
+### 해설
+1. 첫 문자 x의 개수와 다른 문자 other의 개수 카운팅
+2. 값이 같아지면 개수 초기화 + 자른 인덱스 위치와 횟수 갱신
+3. 문자열 길이가 1일 때와 자르고 남은 문자열 처리 
+
+---
+
 ### 성능 요약
 
 메모리: 73.6 MB, 시간: 0.70 ms
