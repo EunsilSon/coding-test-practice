@@ -2,6 +2,13 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/133502?language=java) 
 
+---
+### 해설
+Stack에 재료를 한 개씩 넣고, Stack 크기가 4이상이 되면 Stack에 쌓인 재료 4개를 꺼내 빵-야채-고기-빵 인지 확인한다.  
+순서가 맞지 않다면 다시 넣는다.
+
+---
+
 ### 성능 요약
 
 메모리: 69.7 MB, 시간: 1.63 ms
