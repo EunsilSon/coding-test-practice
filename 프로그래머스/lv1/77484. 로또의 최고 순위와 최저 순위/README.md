@@ -2,6 +2,14 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/77484?language=java) 
 
+---
+### 해설
+1. `lottos`와 `win_nums`의 값을 비교하며 일치하는 로또 번호 개수를 카운팅한다.  
+2. 로또 번호와 일치하는 개수는 `min`이고, `min`에 로또 번호가 `0`인 개수를 합하면 최고 순위의 개수 `max`가 된다.  
+3. 로또 번호가 일치하는 개수를 순위로 변환하여 반환한다.
+
+---
+
 ### 성능 요약
 
 메모리: 72.8 MB, 시간: 0.03 ms
