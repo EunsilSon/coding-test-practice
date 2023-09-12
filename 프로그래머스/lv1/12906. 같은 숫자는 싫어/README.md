@@ -1,6 +1,61 @@
 # [level 1] 같은 숫자는 싫어 - 12906 
-
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12906) 
+
+
+# 해설
+### 1. ArrayList로 해결한 코드
+ArrayList에 삽입한 `arr[i]`와 다른 숫자가 나올때까지 for문을 반복하여 최악의 경우 시간복잡도 `O(n2)` 이 나올 수 있는 코드이다.
+
+```java
+public int[] solution(int []arr) {
+    ArrayList<Integer> answerlist = new ArrayList<>();
+
+    for (int i = 0; i < arr.length; i++) {
+        int n = arr[i];
+        answerlist.add(n);
+
+        for (int j = i+1; j < arr.length; j++) {
+            if (n == arr[j]) {
+                arr[j] = 0;
+                i++;
+            } else {
+                break;
+            }
+        }
+    }
+
+    int[] answer = new int[answerlist.size()];
+    for (int i = 0; i < answerlist.size(); i++) {
+        answer[i] += (int)answerlist.get(i);
+    }
+
+    return answer;
+}
+```
+
+### 2. Stack으로 해결한 코드
+stack의 top에 있는 값과 `arr[i]`를 비교하여 같은 숫자를 배제시킨다.  
+시간복잡도 `O(n)`으로 해결할 수 있다.
+```java
+
+public int[] solution(int []arr) {
+    Stack<Integer> stack = new Stack<>();
+
+    for (int i = 0; i < arr.length; i++) {
+        if (stack.isEmpty() || stack.peek() != arr[i]) {
+            stack.push(arr[i]);
+        }
+    }
+
+    int[] result = new int[stack.size()];
+    for (int i = result.length-1; i >= 0; i--) {
+        result[i] = stack.pop();
+    }
+
+    return result;
+}
+```
+---
 
 ### 성능 요약
 
