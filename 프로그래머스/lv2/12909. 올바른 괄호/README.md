@@ -2,6 +2,15 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12909?language=java) 
 
+# 해설
+열린 괄호와 닫힌 괄호가 쌍을 이루어야하기 때문에 첫 문자가 닫힌 괄호인 경우 바로 `false`를 반환한다.  
+
+stack의 top이 열린 괄호이고, 다음 문자가 닫힌 괄호인 경우 stack의 top을 제거한다.  
+
+stack이 비어져있다면 모두 올바른 괄호이다.
+
+---
+
 ### 성능 요약
 
 메모리: 53.3 MB, 시간: 20.25 ms
