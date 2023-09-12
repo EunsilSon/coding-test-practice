@@ -13,7 +13,10 @@ class Solution {
             
             if (c == '(') {
                 stack.push(c);
-            } else if (!stack.isEmpty() && stack.peek() == '(') {
+                continue;
+            }
+            
+            if (!stack.isEmpty() && stack.peek() == '(') {
                 stack.pop();
             }
         }
