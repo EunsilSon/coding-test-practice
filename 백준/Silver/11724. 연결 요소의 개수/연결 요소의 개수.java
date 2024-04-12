@@ -21,13 +21,13 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String[] line1 = br.readLine().split(" ");
-        N = Integer.parseInt(line1[0]);
+        N = Integer.parseInt(line1[0]) + 1;
         M = Integer.parseInt(line1[1]);
 
-        visited = new boolean[N+1];
+        visited = new boolean[N];
         list = new ArrayList<>();
 
-        for (int i = 0; i < N+1; i++) {
+        for (int i = 0; i < N; i++) {
             list.add(new ArrayList<>());
         }
 
@@ -40,7 +40,7 @@ public class Main {
         }
 
         int answer = 0;
-        for (int i = 1; i <= N; i++) {
+        for (int i = 1; i < N; i++) {
             if (!visited[i]) {
                 dfs(i);
                 answer++;
