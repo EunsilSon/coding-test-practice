@@ -1,28 +1,44 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 public class Main {
-    static int N;
-    static int M;
     static ArrayList<ArrayList<Integer>> list;
     static boolean[] visited;
 
-    static void dfs(int x) {
+    public static void dfs(int x) {
         visited[x] = true;
 
-        for (int i = 0; i < list.get(x).size(); i++) {
-            if (!visited[list.get(x).get(i)]) {
-                dfs(list.get(x).get(i));
+        for (int y = 0; y < list.get(x).size(); y++) {
+            if (!visited[list.get(x).get(y)]) {
+                dfs(list.get(x).get(y));
             }
         }
     }
 
-    public static void main(String[]args) throws IOException {
+    public static void bfs(int x) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(x);
+        visited[x] = true;
+
+        while (!queue.isEmpty()) {
+            x = queue.poll();
+
+            for (int y = 0; y < list.get(x).size(); y++) {
+                int node = list.get(x).get(y);
+                if (!visited[node]) {
+                    queue.add(node);
+                    visited[node] = true;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String[] line1 = br.readLine().split(" ");
-        N = Integer.parseInt(line1[0]) + 1;
-        M = Integer.parseInt(line1[1]);
+        int N = Integer.parseInt(line1[0]) + 1;
+        int M = Integer.parseInt(line1[1]);
 
         visited = new boolean[N];
         list = new ArrayList<>();
@@ -39,13 +55,14 @@ public class Main {
             list.get(y).add(x);
         }
 
-        int answer = 0;
+
+        int count = 0;
         for (int i = 1; i < N; i++) {
             if (!visited[i]) {
-                dfs(i);
-                answer++;
+                bfs(i);
+                count++;
             }
         }
-        System.out.println(answer);
+        System.out.println(count);
     }
 }
