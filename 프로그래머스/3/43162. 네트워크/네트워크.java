@@ -1,25 +1,27 @@
 class Solution {
-    private static void dfs(int x, int[][] computers) {
-        for (int y = 0; y < computers[x].length; y++) {
-            if (computers[x][y] == 1) {
-                computers[x][y] = 0;
-                dfs(y, computers);
+    public static boolean[] visited;
+    
+    public void dfs(int[][] computers, int i) {
+        for (int j = 0; j < computers[i].length; j++) {
+            if (computers[i][j] == 1) {
+                computers[i][j] = 0;
+                dfs(computers, j);
             }
         }
     }
     
     public int solution(int n, int[][] computers) {
-        int count = 0;
+        int answer = 0;
         
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (computers[i][j] != 0) {
-                    count++;
-                    dfs(i, computers);
+                if (computers[i][j] == 1) {
+                    dfs(computers, i);
+                    answer++;
                 }
             }
         }
         
-        return count;
+        return answer;
     }
 }
