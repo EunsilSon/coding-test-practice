@@ -23,7 +23,7 @@ class Solution {
         for (int i = 0; i < tickets.length; i++) {
             if (tickets[i][0].equals(start) && !visited[i]) {
                 visited[i] = true;
-                dfs(tickets, tickets[i][1], route + " " + tickets[i][1], depth + 1);
+                dfs(tickets, tickets[i][1], route + tickets[i][1], depth + 1);
                 visited[i] = false;
             }
         }
