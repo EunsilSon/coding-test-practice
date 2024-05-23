@@ -14,12 +14,12 @@ class Solution {
         }
 
         for (int i = 0; i < goal.length; i++) {
-            if (!q1.isEmpty() && goal[i].equals(q1.peek())) { // cards1에서 사용
+            if (goal[i].equals(q1.peek())) { // cards1에서 사용
                 q1.poll();
                 continue;
             }
 
-            if (!q2.isEmpty() && goal[i].equals(q2.peek())) { // cards2에서 사용
+            if (goal[i].equals(q2.peek())) { // cards2에서 사용
                 q2.poll();
                 continue;
             }
