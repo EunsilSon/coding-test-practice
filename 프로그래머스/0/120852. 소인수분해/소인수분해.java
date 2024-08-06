@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int n) {
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> set = new LinkedHashSet<>();
         
         int i = 2;
         while (n >= i) {
@@ -14,9 +14,6 @@ class Solution {
             }
         }
         
-        int[] answer = set.stream().mapToInt(Integer::intValue).toArray();
-        Arrays.sort(answer);
-        
-        return answer;
+        return set.stream().mapToInt(Integer::intValue).toArray();
     }
 }
