@@ -14,14 +14,8 @@ class Solution {
             }
         }
         
-        int[] answer;
-        if (set.isEmpty()) {
-            answer = new int[1];
-            answer[0] = n;
-        } else {
-            answer = set.stream().mapToInt(Integer::intValue).toArray();
-            Arrays.sort(answer);
-        }
+        int[] answer = set.stream().mapToInt(Integer::intValue).toArray();
+        Arrays.sort(answer);
         
         return answer;
     }
