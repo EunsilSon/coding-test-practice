@@ -1,7 +1,2 @@
-# 코딩테스트 연습
-여러 코딩테스트 플랫폼에서 해결한 문제들을 기록합니다.  
-
-<br>
-
-- 자동 푸시 : `백준`, `프로그래머스`, `LeetCode`
-- 수동 푸시 : `HackerRank`, `이것이 코딩 테스트다(책)`
+# coding-test-practice
+This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
