@@ -4,7 +4,7 @@ class Solution {
         int distance = 100;
         
         for (int i : array) {
-            int temp = (i > n) ? (i - n) : (n - i);
+            int temp = (int) Math.abs(n-i);
             
             if (distance > temp) {
                 distance = temp;
