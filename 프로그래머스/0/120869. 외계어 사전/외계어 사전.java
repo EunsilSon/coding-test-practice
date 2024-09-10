@@ -1,25 +1,21 @@
-import java.util.*;
-
 class Solution {
     public int solution(String[] spell, String[] dic) {
-        
-        for (int i = 0; i < dic.length; i++) {
-            String checkStr = String.join("", spell);
-            
-            for (String s : spell) {
-                String temp = dic[i].replaceFirst(s, "");
+        for(int i = 0; i < dic.length; i++) {
+            if(dic[i].length() == spell.length) {
+                boolean flag = true;
                 
-                if (!temp.equals(dic[i])) {
-                    checkStr = checkStr.replace(s, "");
+                for(String s : spell) {
+                    if(!dic[i].contains(s)) {
+                        flag = false;
+                        break;
+                    }
                 }
-                dic[i] = temp;
-            }
-            
-            if (dic[i].isEmpty() && checkStr.isEmpty()) {
-                return 1;
+
+                if(flag) {
+                    return 1;
+                }
             }
         }
         return 2;
-        
     }
 }
