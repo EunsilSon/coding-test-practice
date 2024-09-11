@@ -2,16 +2,15 @@ import java.util.*;
 
 class Solution {
     public int solution(int n) {
-        ArrayList<Integer> xNums = new ArrayList<>();
-        
-        int i = 1;
-        while (xNums.size() != n) {
-            if (i % 3 != 0 && !String.valueOf(i).matches("(.*)3(.*)")) {
-                xNums.add(i);
+        int answer = 0;
+        for (int i = 1; i <= n; i++) {
+            answer++;
+            
+            if (answer % 3 == 0 || String.valueOf(answer).matches("(.*)3(.*)")) {
+                i--;
             }
-            i++;
         }
         
-        return xNums.get(n-1);
+        return answer;
     }
 }
