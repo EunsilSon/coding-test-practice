@@ -1,10 +1,10 @@
 class Solution {
     public String solution(String myString) {
+        StringBuilder sb = new StringBuilder();
+        
         for (char c : myString.toCharArray()) {
-            if (c < 'l') {
-                myString = myString.replace(String.valueOf(c), "l");
-            }
+            sb.append((c < 'l') ? "l" : c);
         }
-        return myString;
+        return sb.toString();
     }
 }
