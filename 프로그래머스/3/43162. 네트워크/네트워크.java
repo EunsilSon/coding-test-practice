@@ -1,16 +1,17 @@
 class Solution {
     public int solution(int n, int[][] computers) {
-        int network = 0;
+        int answer = 0;
         
         for (int i = 0; i < computers.length; i++) {
             for (int j = 0; j < computers.length; j++) {
                 if (computers[i][j] == 1) {
                     dfs(computers, i);
-                    network++;
+                    answer++;
                 }
             }
         }
-        return network;
+        
+        return answer;
     }
     
     public static void dfs(int[][] computers, int x) {
@@ -21,5 +22,4 @@ class Solution {
             }
         }
     }
-    
 }
