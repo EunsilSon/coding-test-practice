@@ -21,21 +21,18 @@ class Main {
         }
 
         ArrayList<Integer> list = new ArrayList<>();
-        int count = 0;
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                apt = 0;
-
                 if (graph[i][j] == 1) {
+                    apt = 0;
                     dfs(graph, i, j);
                     list.add(apt);
-                    count++;
                 }
             }
         }
 
-        System.out.println(count);
+        System.out.println(list.size());
         Collections.sort(list);
         for(int num : list) {
             System.out.println(num);
