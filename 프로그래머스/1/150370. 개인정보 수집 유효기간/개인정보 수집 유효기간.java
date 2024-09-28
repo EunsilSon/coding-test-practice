@@ -14,7 +14,7 @@ class Solution {
         Map<String, Integer> termsMap = new HashMap<>();
         for (int i = 0; i < terms.length; i++) {
             String[] temp = terms[i].split(" ");
-            termsMap.put(temp[0], Integer.parseInt(temp[1]));
+            termsMap.put(temp[0], Integer.parseInt(temp[1]) * 28);
         }
         
         // 유효기간 체크
@@ -25,20 +25,12 @@ class Solution {
             int privacyDay = Integer.parseInt(p[2]);
             String privacyType = p[3];
             
-            int effectiveDays = termsMap.get(privacyType) * 28;
+            int total = 0;
+            total += (currentYear - privacyYear) * 12 * 28;
+            total += (currentMonth - privacyMonth) * 28;
+            total += currentDay - privacyDay; 
             
-            int year = (currentYear - privacyYear) * 12;
-            int month = currentMonth - privacyMonth;
-
-            year += month;
-            year *= 28;
-            
-            int day = currentDay - privacyDay; 
-            int totalDays = year + day;
-            
-            effectiveDays -= totalDays;
-
-            if (effectiveDays <= 0) {
+            if (termsMap.get(privacyType) <= total) {
                 answer.add(i+1);
             }
         }
