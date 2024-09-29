@@ -1,28 +1,30 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        boolean hasConstructor = false;
+        int N = sc.nextInt();
+        int answer = N;
+        boolean flag = false;
 
-        for (int i = 0; i < n; i++) {
-            int number = i; // 분해합
-            int sum = 0; // 각 자릿수의 합계
+        for (int i = N; i >= 0; i--) {
+            int con = i;
+            int sum = i;
 
-            while (number != 0) { // 각 자릿수를 모두 더할 때까지
-                sum += number % 10;
-                number /= 10;
+            while (con != 0) {
+                sum += con % 10;
+                con /= 10;
             }
 
-            if ((i + sum) == n) {
-                System.out.println(i);
-                hasConstructor = true;
-                break;
+            if (sum == N) {
+                flag = true;
+                answer = i;
             }
         }
-        if (!hasConstructor) {
-            System.out.println(0);
+
+        if (!flag) {
+            answer = 0;
         }
+        System.out.println(answer);
     }
 }
