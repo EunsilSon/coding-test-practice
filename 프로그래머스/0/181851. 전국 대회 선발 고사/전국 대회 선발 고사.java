@@ -2,28 +2,20 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] rank, boolean[] attendance) {
-        Map<Integer, Boolean> map = new LinkedHashMap<>();
+        Map<Integer, Integer> map = new TreeMap<>();
         for (int i = 0; i < rank.length; i++) {
-            map.put(rank[i], attendance[i]);
+            if (attendance[i]) {
+                map.put(rank[i], i);
+            }
         }
-        
-        List<Integer> keyList = new ArrayList<>(map.keySet());
-        Collections.sort(keyList);
-        
+
         int[] result = new int[3];
         int idx = 0;
         int pick = 0;
         
-        for (Integer r : keyList) {
-            if (map.get(r)) {
-                for (int i = 0; i < rank.length; i++) {
-                    if (rank[i] == r) {
-                        result[idx++] = i;
-                        pick++;
-                        break;
-                    }
-                }
-            }
+        for (Integer key : map.keySet()) {
+            result[idx++] = map.get(key);
+            pick++;
             
             if (pick == 3) {
                 break;
